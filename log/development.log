@@ -38,3 +38,18 @@ Started GET "/serviceworker.js" for 172.21.0.1 at 2022-05-01 17:14:07 +0900
   
 ActionController::RoutingError (No route matches [GET] "/serviceworker.js"):
   
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('7864839756650184315', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20220504061319)
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) DEFAULT '' NOT NULL, `email` varchar(255) DEFAULT '', `uid` varchar(255) DEFAULT '' NOT NULL, `introduction` text DEFAULT '', `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `index_users_on_uid` (`uid`))[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('7864839756650184315')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('7864839756650184315', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20220504061319)
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) DEFAULT '' NOT NULL, `email` varchar(255) DEFAULT '', `uid` varchar(255) DEFAULT '' NOT NULL, `introduction` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `index_users_on_uid` (`uid`))[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20220504061319')[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('7864839756650184315')[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
