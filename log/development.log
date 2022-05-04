@@ -53,3 +53,69 @@ Migrating to CreateUsers (20220504061319)
   [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('7864839756650184315')[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started OPTIONS "/api/v1/auth/users" for 172.21.0.1 at 2022-05-04 16:09:10 +0900
+Started OPTIONS "/api/v1/auth/users" for 172.21.0.1 at 2022-05-04 16:09:10 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (11.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/auth/users"):
+  
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/auth/users"):
+  
+Started OPTIONS "/api/v1/auth/users" for 172.21.0.1 at 2022-05-04 16:09:40 +0900
+Started OPTIONS "/api/v1/auth/users" for 172.21.0.1 at 2022-05-04 16:09:40 +0900
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/auth/users"):
+  
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/api/v1/auth/users"):
+  
+Started POST "/api/v1/auth/users" for 172.21.0.1 at 2022-05-04 16:10:07 +0900
+Processing by Api::V1::Auth::UsersController#create as */*
+  Parameters: {"token"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 525)
+
+
+  
+Redis::CannotConnectError (Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)):
+  
+app/controllers/api/v1/auth/users_controller.rb:9:in `create'
+Started POST "/api/v1/auth/users" for 172.21.0.1 at 2022-05-04 16:33:58 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (7.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::Auth::UsersController#create as */*
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = 'WDzn2cqQh7QFg2PPGRVGk1Cbcmx1' LIMIT 1[0m
+  ↳ app/controllers/api/v1/auth/users_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 11.7ms | Allocations: 9925)
+
+
+  
+NameError (undefined local variable or method `payloard' for #<Api::V1::Auth::UsersController:0x00000000020670>
+Did you mean?  payload
+               @payload):
+  
+app/controllers/api/v1/auth/users_controller.rb:13:in `block in create'
+app/controllers/api/v1/auth/users_controller.rb:11:in `create'
+Started POST "/api/v1/auth/users" for 172.21.0.1 at 2022-05-04 16:34:30 +0900
+Processing by Api::V1::Auth::UsersController#create as */*
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = 'WDzn2cqQh7QFg2PPGRVGk1Cbcmx1' LIMIT 1[0m
+  ↳ app/controllers/api/v1/auth/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/auth/users_controller.rb:15:in `create'
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `uid`, `introduction`, `created_at`, `updated_at`) VALUES ('佐藤大地', 'daichiexperience@gmail.com', 'WDzn2cqQh7QFg2PPGRVGk1Cbcmx1', NULL, '2022-05-04 07:34:30.564057', '2022-05-04 07:34:30.564057')[0m
+  ↳ app/controllers/api/v1/auth/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/auth/users_controller.rb:15:in `create'
+Completed 200 OK in 48ms (Views: 0.5ms | ActiveRecord: 13.0ms | Allocations: 6471)
+
+
+Started POST "/api/v1/auth/users" for 172.21.0.1 at 2022-05-04 16:36:44 +0900
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::Auth::UsersController#create as */*
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`uid` = 'WDzn2cqQh7QFg2PPGRVGk1Cbcmx1' LIMIT 1[0m
+  ↳ app/controllers/api/v1/auth/users_controller.rb:11:in `create'
+Completed 200 OK in 45ms (Views: 0.5ms | ActiveRecord: 10.5ms | Allocations: 8141)
+
+

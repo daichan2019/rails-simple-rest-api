@@ -10,7 +10,7 @@ module Api
           raise ArgumentError, 'BadRequest Parameter' if payload.blank?
           @user = User.find_or_initialize_by(uid: payload['sub']) do |user|
             user.name = payload['name']
-            user.email = payloard['email']
+            user.email = payload['email']
           end
           if @user.save
             render json: @user, status: :ok
