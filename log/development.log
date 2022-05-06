@@ -119,3 +119,4 @@ Processing by Api::V1::Auth::UsersController#create as */*
 Completed 200 OK in 45ms (Views: 0.5ms | ActiveRecord: 10.5ms | Allocations: 8141)
 
 
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
